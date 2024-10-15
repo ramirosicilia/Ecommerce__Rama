@@ -2,7 +2,8 @@
 
 import { iconCart, actualizarOverlay, actualizarValorTotal } from "./ActualizarOverlay.js"; 
 import { productosActualizados } from "./ActivarBotones.js";
-import { botonReactivado } from './ReactivarBoton.js';
+import { botonReactivado } from './ReactivarBoton.js'; 
+import { BACKEND } from "./Variables.js";
 
 
 
@@ -31,7 +32,7 @@ export function eliminarProducto() {
 
         // Actualizar el servidor con el stock actualizado o eliminar el producto
         try {
-          await fetch(`http://localhost:3000/carrito/productos/${idProducto}`, {
+          await fetch(`${BACKEND}/carrito/productos/${idProducto}`, {
             method: producto.stock > 0 ? "PUT" : "DELETE",
             headers: {
               "Content-Type": "application/json"

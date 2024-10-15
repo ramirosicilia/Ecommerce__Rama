@@ -1,7 +1,9 @@
 import { productosActualizados } from './ActivarBotones.js'; 
+import { MERCADO_PAGO_PUBLIC_KEY,PAYMENT} from "./Variables.js";
+
 
 const comprar = document.getElementById('comprar');
-const mp = new MercadoPago(process.env.MERCADO_PAGO_PUBLIC_KEY, {
+const mp = new MercadoPago(MERCADO_PAGO_PUBLIC_KEY, {
     locale: "es-AR"
 });
 
@@ -35,7 +37,7 @@ const postProduct = async (productos) => {
         ;
 
         // Enviar los productos al servidor para crear la preferencia
-        const response = await fetch("http://localhost:2000/create_preference", {
+        const response = await fetch(`${PAYMENT}/create_preference`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

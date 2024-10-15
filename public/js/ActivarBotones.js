@@ -1,6 +1,7 @@
 import {  actualizarValorTotal,iconCart } from "./ActualizarOverlay.js"; 
 import { actualizarOverlay } from "./ActualizarOverlay.js";
-import {actualizarBoton} from "./ActualizarBoton.js" 
+import {actualizarBoton} from "./ActualizarBoton.js"  
+import { BACKEND } from "./Variables.js";
 
 
 export let productosActualizados = localStorage.getItem('Productos-Actualizados') ? JSON.parse(localStorage.getItem('Productos-Actualizados')) : []; 
@@ -9,7 +10,7 @@ export let productosActualizados = localStorage.getItem('Productos-Actualizados'
    async function obtenerID(){ 
 
     try{ 
-       let response= await fetch(`http://localhost:3000/carrito/productos`,{
+       let response= await fetch(`${BACKEND}/carrito/productos`,{
         method:'GET',
         headers:{
           "Content-Type":"application/json"

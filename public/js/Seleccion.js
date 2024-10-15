@@ -1,8 +1,6 @@
 
-import {activarBoton,productosActualizados} from "./ActivarBotones.js"
-
-
-
+import {activarBoton,productosActualizados} from "./ActivarBotones.js" 
+import { BACKEND } from "./Variables.js";
 
 
 const informacion = document.getElementById('seccion-info');
@@ -12,7 +10,8 @@ const carritoInput= document.getElementById("carrito-input");
 const carritoCompras=document.getElementById('carrito-compras') 
  let seleccion=document.querySelector(".select")  
  let carritoID=[]
- console.log(seleccion)
+ console.log(seleccion) 
+
 
 function crearBotones() {
     let boton = document.createElement('button');
@@ -35,7 +34,7 @@ seleccion.addEventListener('click', (e) => {
  (async()=>{ 
 
     try{ 
-        const reponse=await fetch(`http://localhost:3000/carrito/productos`,{ 
+        const reponse=await fetch(`${BACKEND}/carrito/productos`,{ 
             method:"GET",
             headers:{
                 "Content-Type":"application/Json"

@@ -6,7 +6,7 @@ export function actualizarBoton(producto) {
     let botones = document.querySelectorAll(`[data-id="${producto.id}"]`);
   
     botones.forEach(boton => {
-      if (producto.stock <= 0) {
+      if (true) {
         // Actualizar contenido y estilo de los botones
         boton.innerHTML = 'Sin stock';
         boton.style.opacity = '.6';

@@ -2,6 +2,7 @@
 
 import { actualizarValorTotal } from "./ActualizarOverlay.js"; 
 import { activarBoton } from './ActivarBotones.js'; 
+import { BACKEND } from "./Variables.js";
 
 
 let carrito = document.getElementById('carrito__compras');
@@ -18,8 +19,8 @@ function crearBotones() {
  async function crearCarrito() {
 
    try{ 
-
-    const response= await fetch('http://localhost:3000/carrito/productos',{
+    
+    const response= await fetch(`${BACKEND}/carrito/productos`,{
         method:'GET',
         headers:{
          "Content-Type":"application/json"

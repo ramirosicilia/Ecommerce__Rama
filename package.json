@@ -2,7 +2,8 @@
   "name": "front_server",
   "version": "1.0.0",
   "description": "",
-  "main": "./front-Server/front_Server.js",
+  "main": "./front-Server.js",
+  "type": "module",
   "scripts": {
     "start": "node front_Server.js",
     "dev": "nodemon front_Server.js"
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "nodemon": "^3.1.7",
     "path": "^0.12.7"

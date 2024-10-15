@@ -1,6 +1,7 @@
 
 import { productosActualizados } from "./ActivarBotones.js"  
 import {activarBoton} from "./ActivarBotones.js" 
+import { BACKEND } from "./Variables.js";
 import { actualizarOverlay } from "./ActualizarOverlay.js";
 
 const formulario=document.getElementById("header-formulario") 
@@ -8,8 +9,8 @@ const informacion = document.getElementById('seccion-info');
 const carritoInput= document.getElementById("carrito-input");  
 const carritoCompras=document.getElementById('carrito-compras') 
 const carritoSeleccion=document.getElementById("carrito-filtrado")
-let carritoID=[]
-
+let carritoID=[] 
+ 
 
 function crearBotones() {
     let boton = document.createElement('button');
@@ -21,7 +22,7 @@ function crearBotones() {
 (async()=>{ 
 
     try{ 
-        const reponse=await fetch(`http://localhost:3000/carrito/productos`,{ 
+        const reponse=await fetch(`${BACKEND}/carrito/productos`,{ 
             method:"GET",
             headers:{
                 "Content-Type":"application/Json"
@@ -107,9 +108,10 @@ formulario.addEventListener("submit",(e)=>{
             block:'start' 
             })
 
-
+        
          activarBoton()
     }  
+
 
     if(filtradoBusqueda.length===0){ 
    

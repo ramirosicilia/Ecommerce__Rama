@@ -1,6 +1,7 @@
 import { iconCart, actualizarOverlay, actualizarValorTotal } from "./ActualizarOverlay.js"; 
 import { productosActualizados } from "./ActivarBotones.js";
-import {actualizarBoton} from "./ActualizarBoton.js"
+import {actualizarBoton} from "./ActualizarBoton.js" 
+import { BACKEND } from "./Variables.js";
 
 
 export function agregarProducto() {  
@@ -32,7 +33,7 @@ export function agregarProducto() {
           producto.cantidad++; // Si aún queda stock, incrementamos la cantidad
         } 
 
-          fetch(`http://localhost:3000/carrito/productos/${idProducto}`, {
+          fetch(`${BACKEND}/carrito/productos/${idProducto}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ cantidad: producto.cantidad, stock: producto.stock })
