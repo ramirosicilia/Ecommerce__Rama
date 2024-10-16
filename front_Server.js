@@ -1,7 +1,8 @@
 import express from 'express';
 import { config } from 'dotenv'; // Cargar dotenv antes de usar process.env
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'url'; 
+import cors from 'cors'
 
 // Cargar variables de entorno
 config(); // Asegúrate de que esté ejecutándose correctamente
@@ -16,7 +17,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 5000;
+const port = 5000; 
+
+app.use(cors())
 
 // Servir archivos estáticos desde la carpeta "public" dentro del "frontend"
 app.use(express.static(path.join(__dirname, "./public"))); 

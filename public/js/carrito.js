@@ -20,13 +20,7 @@ function crearBotones() {
 
    try{ 
     
-    const response= await fetch(`${BACKEND}/carrito/productos`,{
-        method:'GET',
-        headers:{
-         "Content-Type":"application/json"
-        }
-
-    })  
+    const response= await fetch(`${BACKEND}/carrito/productos`)
 
     if (!response.ok) {
         throw new Error('Error en la petición: ' + response.status);

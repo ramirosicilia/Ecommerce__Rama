@@ -10,12 +10,7 @@ export let productosActualizados = localStorage.getItem('Productos-Actualizados'
    async function obtenerID(){ 
 
     try{ 
-       let response= await fetch(`${BACKEND}/carrito/productos`,{
-        method:'GET',
-        headers:{
-          "Content-Type":"application/json"
-        }
-       }) 
+       let response= await fetch(`${BACKEND}/carrito/productos`)
 
        let data=await response.json()  
 
@@ -70,7 +65,7 @@ async function botonesActivados(e) {
 
       // Actualizamos el stock en el backend
       try {
-          let response = await fetch(`http://localhost:3000/carrito/productos/${productoSeleccionado.id}`, {
+          let response = await fetch(`${BACKEND}/carrito/productos/${productoSeleccionado.id}`, {
               method: "PUT",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

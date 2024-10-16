@@ -34,14 +34,7 @@ seleccion.addEventListener('click', (e) => {
  (async()=>{ 
 
     try{ 
-        const reponse=await fetch(`${BACKEND}/carrito/productos`,{ 
-            method:"GET",
-            headers:{
-                "Content-Type":"application/Json"
-            }
-
-        }) 
-
+        const reponse=await fetch(`${BACKEND}/carrito/productos`)
         if(!reponse.ok){
             throw new Error("hubo un error al recibir los productos");
             

@@ -31,7 +31,7 @@ export async function actualizarOverlay() {
                     </div>
                 </div>
             `; 
-        }
+        }  
 
         // Reagregar los event listeners después de actualizar el overlay
         localStorage.setItem("Productos-Actualizados", JSON.stringify(productosActualizados));

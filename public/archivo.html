@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+      const prod=async()=>{ 
+        const response= await fetch("https://ecommerce-backend-lc98.onrender.com/carrito/productos") 
+        if(!response.ok){ 
+         console.log('productos no encontrados') 
+
+         
+ 
+        } 
+ 
+        else{ 
+            const data=await response.json() 
+         
+         console.log('productos  encontrados',data) 
+        }
+
+      } 
+prod() 
+    </script>
+</body>
+</html>

@@ -5,13 +5,17 @@ import { BACKEND } from "./Variables.js";
 
 
 export function agregarProducto() {  
-  let agregarBoton = document.querySelectorAll('.agregar__boton');
+  let agregarBoton = document.querySelectorAll('.agregar__boton'); 
+  console.log(agregarBoton) 
 
-  agregarBoton.forEach(botonAgregar => {
-    botonAgregar.addEventListener('click', async (e) => { 
-
+  agregarBoton.forEach(botonAgregar => { 
+  
+    botonAgregar.addEventListener('click', async (e) => {  
+      
+      
       let idProducto = Number(botonAgregar.dataset.id); 
-      console.log(idProducto)
+   
+
       let producto = productosActualizados.find(p => p.id === idProducto); 
       console.log(producto.id)
 
@@ -27,13 +31,13 @@ export function agregarProducto() {
           actualizarBoton(producto)  
           
         }   
-
+ 
         
         else {
           producto.cantidad++; // Si aún queda stock, incrementamos la cantidad
         } 
 
-          fetch(`${BACKEND}/carrito/productos/${idProducto}`, {
+         await fetch(`${BACKEND}/carrito/productos/${idProducto}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ cantidad: producto.cantidad, stock: producto.stock })
