@@ -76,19 +76,15 @@ body{
    gap: 2rem; 
   
  
-
  } 
 
  
-
  .header_icon{
     width: 3%;
 
  } 
 
 
-
- 
 
 .numero{ 
     position: absolute; 
@@ -97,7 +93,7 @@ body{
     font-size: 3rem;
     border-radius: 50%;
     font-weight: bolder;
-   color: #000;
+    color: #000;
     padding: .1rem;
     font-size: 2.5rem;
   
@@ -189,6 +185,8 @@ body{
    padding: 3rem 0px;
    gap: 3rem; 
 } 
+
+
 .main{
    width:100%;
 }
@@ -271,8 +269,8 @@ body{
     padding: 1rem 6rem;
     border: none; 
     border-radius: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   letter-spacing: 1px;
     font-size: 1.5rem; 
     font-weight: 800;
     background-color: rgb(255, 0, 200);
@@ -291,8 +289,8 @@ body{
 /* Estado inicial (oculto) */
 .overlay {
     width: 50%;
-    min-height: 30rem;
-    max-height: 60rem;
+    min-height: 80%;
+    max-height: 80%;
     background-color: hsl(0, 2%, 10%);
     z-index: 3344;
     position: fixed;
@@ -300,7 +298,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 2rem;
-    display: block; /* Siempre block, controlaremos la visibilidad con opacity */
+    display: flex; /* Siempre block, controlaremos la visibilidad con opacity */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -546,8 +544,771 @@ body{
 
 #wallet_container{
     position: absolute; 
-    right: 10px;
-    bottom:0;
+    left: 55%;
+    bottom:-10%;
     z-index: 1000;
+
+} 
+
+/* RESPONSIVE DESIGN */  
+
+
+@media (min-width: 992px) and (max-width: 1199px) {  
+
+    .numero{
+      top: 14%;
+      right:9%; 
+
+}    
+
+.header_icon{
+    width: 4%;
+
+ } 
+
+
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0px;
+} 
+
+
+
+
+.imagenes__tarjeta{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2rem;
+}  
+
+.titulo__tarjeta{ 
+    font-size: 2.5rem;
+
+}  
+
+.color__tarjeta{ 
+    
+    font-size: 1.5rem; 
+    
+}   
+
+.imagen__precio{
+    font-size: 1.5rem;
+}  
+
+.botones__agregar{
+    padding: .8rem 5rem;
+    font-size: 1.4rem; 
+    
+}  
+
+.overlay{
+    width: 60%;
+}
+
+.cantidad, .stock{
+    font-size: 1.5rem;
+
+} 
+
+.valor__total{ 
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    
+} 
+
+.vaci{
+    font-size: 1rem; 
+    
+} 
+
+.icon__vaciar{
+   font-size: 2rem; 
+
+}  
+
+.comprar{
+    padding: .8rem 3rem;
+    font-size: 1.5rem;
+}  
+
+
+.imagen__producto{ 
+    width: 10rem; 
+    height: 10rem;
+} 
+
+.agregar__boton{ 
+    padding: .3rem 1.5rem; 
+
+}   
+
+.eliminar__boton{
+    padding: .3rem 1.5rem; 
+   
+}  
+
+#wallet_container{
+    position: absolute; 
+    left: 50%;
+    bottom:-15%; 
+    z-index: 1000;
+
+}  
+
+
+
+} 
+
+ 
+@media (min-width: 768px) and (max-width: 991px) {      
+
+
+.contenedor-carrito{
+    background-color: #b3a7a7;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 2px 4px 4px #1a1919 ; 
+
+}   
+
+.numero{ 
+        
+   top: 12.5%;
+   right:8.5%; 
+  
+}    
+
+.header_icon{
+    width: 4%;
+
+ }   
+
+ .seleccionar {
+    position: absolute;
+    top: 20%;
+    right: 20%; /* Alinea a la izquierda */ 
+    transform: translateX(-20%);
+    transform: translateY(-270%); /* Centra verticalmente la lupa */
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    
+}
+
+ .input_enviar {  
+    background-color: #fff;
+    padding: 1rem 8rem; 
+    font-size: 2rem;
+   
+} 
+
+.seccion__titulo-info{
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+} 
+
+.seccion__parrafo-info{
+    font-size: 2rem;
+    
+} 
+
+.imagenes__tarjeta{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 2rem;
+}  
+
+.titulo__tarjeta{ 
+    font-size: 2rem;
+
+}  
+
+.botones__agregar{
+    padding: .6rem 4rem;
+    font-size: 1.4rem; 
+    
+} 
+
+.overlay__container{
+    gap: 6rem;
+        
+}     
+
+
+.overlay__flex{
+    gap: 2rem;
+    
+} 
+
+.overlay__tarjeta-2{ 
+  
+    height: 8rem;
+    gap: 4rem;
+
+}
+
+.valor__total{ 
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    
+} 
+
+.vaci{
+    font-size: 1.5rem; 
+    
+} 
+
+.icon__vaciar{
+   font-size: 2rem; 
+ 
+}  
+.container__total{
+   flex-direction: column; 
+   gap: 4rem;
+
+}  
+ 
+.comprar{
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+}   
+
+
+
+#wallet_container{
+    position: absolute; 
+    left: -30%;
+    bottom:-20%;
+    z-index: 1000;
+
+} 
+
+} 
+
+
+@media (min-width: 576px) and (max-width: 767px) {  
+
+    .contenedor-carrito{
+        background-color: #b3a7a7;
+        padding: 1.5rem;
+        border-radius: 50%;
+        box-shadow: 2px 4px 4px #1a1919 ; 
+    
+    }   
+    
+    .numero{ 
+      font-size:2rem ;
+       top: 11.5%;
+       right:9%; 
+      
+    }    
+    
+    .header_icon{
+        width: 5%;
+    
+     }   
+     
+     .carrito{
+        font-size: 4rem;
+     }
+    
+     .seleccionar {
+        width: 15%;
+        right: 12.5%; /* Alinea a la izquierda */  
+        transform: translateY(-250%); /* Centra verticalmente la lupa */
+        font-size: 1.5rem;
+       
+    } 
+
+    .header__input {
+        width: 80%; /* El input ocupa todo el ancho del contenedor */
+        padding: 1.5rem 10rem; /* Espacio ajustado para dejar lugar a la lupa y el select */
+        font-size: 1.5rem;
+      
+    
+    }
+    
+    
+     .input_enviar {  
+        background-color: #fff;
+        padding: 1rem 5rem; 
+        font-size: 1.5rem;
+       
+    }  
+
+    .lupa {
+       
+        top: 20%;
+        left: 15%; /* Alinea a la izquierda */ 
+        transform: translateX(-20%);
+        transform: translateY(-300%); /* Centra verticalmente la lupa */
+    } 
+
+    .titulo_Ecommerce{
+        font-size: 4.5rem;
+    } 
+
+    .seccion__titulo-info{
+        font-size: 3rem; 
+        text-align: center;
+    } 
+
+    .seccion__parrafo-info{
+        font-size: 2rem;
+    } 
+
+    .carrito__compras, .carrito__filtrado ,.carrito__input{
+       
+        grid-template-columns: repeat(2 , 1fr); 
+        
+    }  
+
+    .imagenes__tarjeta{
+        width: 15rem;
+        height: 15rem;
+    } 
+
+    .titulo__tarjeta{
+        font-size: 2.2rem;
+    } 
+
+    .botones__agregar{
+        padding: 1rem 4rem; 
+        font-size: 1.2rem;
+    } 
+
+    .overlay{
+        width: 70%; 
+        gap: 5rem;
+    } 
+
+    .overlay__container{
+        gap: 6rem;
+    }  
+
+    .overlay__tarjeta-2{
+        gap: 3rem;
+    }
+
+    .container__total{
+        flex-direction: column; 
+        gap: 2rem;
+    }  
+
+    .valor__total{ 
+        font-size: 3rem;
+        letter-spacing: 1.5px;
+        
+    } 
+    
+    .vaci{
+        font-size: 2rem; 
+        text-align: center;
+        
+    } 
+    
+    .icon__vaciar{
+       font-size: 2rem; 
+     
+    }  
+    
+     
+    .comprar{
+        padding: 1rem 4rem;
+        font-size: 1.6rem;
+    } 
+    
+    #wallet_container{
+        position: absolute; 
+        left: -10%;
+        bottom:-25%;
+        z-index: 1000;
+    
+    } 
+    
+
+   
+}
+
+
+@media (max-width:575px){   
+
+    .contenedor-carrito{
+        padding: 1.5rem;
+    
+    }   
+    
+    .numero{ 
+      font-size:1.8rem ;
+       top: 11.5%;
+       right:12%; 
+      
+    }    
+    
+    .header_icon{
+        width: 7.5%;
+    
+     }   
+     
+     .carrito{
+        font-size: 4rem;
+     }
+    
+     .seleccionar {
+        width: 25%;
+        right: 3%; /* Alinea a la izquierda */  
+        transform: translateY(-250%); /* Centra verticalmente la lupa */
+        font-size: 1.5rem;
+       
+    } 
+
+    .header__input {
+        width: 100%; /* El input ocupa todo el ancho del contenedor */
+        padding: 1.5rem 10rem; /* Espacio ajustado para dejar lugar a la lupa y el select */
+        font-size: 1.2rem;
+      
+    
+    }
+    
+    
+     .input_enviar {  
+        background-color: #fff;
+        padding: 1rem 5rem; 
+        font-size: 1.5rem;
+       
+    }  
+
+    .lupa {
+       
+        top: 20%;
+        left: 3%; /* Alinea a la izquierda */ 
+        transform: translateX(-20%);
+        transform: translateY(-300%); /* Centra verticalmente la lupa */
+    } 
+
+    .titulo_Ecommerce{
+        font-size: 3rem;
+    } 
+
+    .seccion__titulo-info{
+        font-size: 3rem; 
+        text-align: center;
+    } 
+
+    .seccion__parrafo-info{
+        font-size: 2rem;
+    } 
+
+    .carrito__compras, .carrito__filtrado ,.carrito__input{
+       
+        grid-template-columns: 100%; 
+        
+    }  
+
+    .imagenes__tarjeta{
+        width: 15rem;
+        height: 15rem;
+    } 
+
+    .seccion__titulo-info{
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    } 
+
+    .seccion__parrafo-info{
+        font-size: 2rem;
+    }
+
+    .titulo__tarjeta{
+        font-size: 2.2rem;
+    } 
+
+    .botones__agregar{
+        padding: 1rem 4rem; 
+        font-size: 1.2rem;
+    } 
+
+    .overlay{
+        width: 70%; 
+        gap: 5rem;
+    } 
+
+    .color__tarjeta{ 
+        align-self: unset; 
+        margin-left: -8rem;
+        
+    
+      
+    } 
+
+    .overlay__container{
+        gap: 6rem;
+    }  
+
+    .overlay__tarjeta-2{
+        gap: 3rem;
+    }
+
+    .container__total{
+        flex-direction: column; 
+        gap: 2rem;
+    }  
+
+    .valor__total{ 
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+        
+    } 
+    
+    .vaci{
+        font-size: 2rem; 
+        text-align: center;
+        
+    } 
+    
+    .icon__vaciar{
+       font-size: 2rem; 
+     
+    }  
+    
+     
+    .comprar{
+        padding: 1rem 4rem;
+        font-size: 1.6rem;
+    } 
+    
+    #wallet_container{
+        position: absolute; 
+        left: -10%;
+        bottom:-25%;
+        z-index: 1000;
+    
+    } 
+
+    .icon__overlay{
+        font-size: 3rem;
+    }
+
+} 
+
+@media(max-width:346px){  
+
+    .contenedor-carrito{
+        padding: 1rem;
+    
+    }   
+    
+    .numero{ 
+      font-size:1.5rem ;
+       top: 11.5%;
+       right:12%; 
+      
+    }    
+    
+    .header_icon{
+        width: 9%;
+    
+     }   
+     
+     .carrito{
+        font-size: 4rem;
+     }
+    
+     .seleccionar {
+        width: 30%;
+        right: 3%; /* Alinea a la izquierda */  
+        transform: translateY(-250%); /* Centra verticalmente la lupa */
+        font-size: 1.5rem;
+       
+    } 
+
+    .header__input {
+        width: 100%; /* El input ocupa todo el ancho del contenedor */
+        padding: 1.5rem 10rem; /* Espacio ajustado para dejar lugar a la lupa y el select */
+        font-size: 1rem;
+        text-align: left;
+      
+    
+    }
+    
+    
+     .input_enviar {  
+        background-color: #fff;
+        padding: 1rem 5rem; 
+        font-size: 1.5rem;
+       
+    }  
+
+    .lupa {
+       
+        top: 20%;
+        left: 3%; /* Alinea a la izquierda */ 
+        transform: translateX(-20%);
+        transform: translateY(-300%); /* Centra verticalmente la lupa */
+    } 
+
+    .titulo_Ecommerce{
+        font-size: 2rem;
+    } 
+
+    .seccion__titulo-info{
+        font-size: 3rem; 
+        text-align: center;
+    } 
+
+    .seccion__parrafo-info{
+        font-size: 2rem;
+    } 
+
+    .carrito__compras, .carrito__filtrado ,.carrito__input{
+       
+        grid-template-columns: 100%; 
+        
+    }  
+
+    .imagenes__tarjeta{
+        width: 15rem;
+        height: 15rem;
+    } 
+
+    .seccion__titulo-info{
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    } 
+
+    .seccion__parrafo-info{
+        font-size: 2rem;
+    }
+
+    .titulo__tarjeta{
+        font-size: 2.2rem;
+    } 
+
+    .botones__agregar{
+        padding: 1rem 4rem; 
+        font-size: 1.2rem;
+    } 
+
+    .overlay{
+        width: 80%; 
+        gap: 5rem;
+    } 
+
+    .color__tarjeta{ 
+        align-self: unset; 
+        margin-left: -8rem;
+        
+    
+      
+    } 
+
+    .overlay__container{
+        gap: 6rem;
+    }  
+
+   
+
+    .valor__total{ 
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+        
+    } 
+    
+    .vaci{
+        font-size: 6rem; 
+        text-align: center;
+        
+    } 
+    
+    .icon__vaciar{
+       font-size: 2rem; 
+     
+    }  
+
+    .agregar__boton, .eliminar__boton{ 
+        padding: .5rem 2rem;
+        font-size: 1rem;
+
+    }
+    
+     
+    .comprar{
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+    } 
+    
+    #wallet_container{
+        position: absolute; 
+        left: -35%;
+        bottom:-25%;
+        z-index: 1000;
+    
+    } 
+
+    .imagen__precio, .cantidad, .stock{
+        font-size: 1.5rem;
+    } 
+
+    .icon__overlay{
+        font-size: 2.5rem;
+    }
+
+
+
+} 
+
+@media (max-width:234px){ 
+
+    .contenedor-carrito{
+        padding: .2rem;
+    
+    }   
+    
+    .numero{ 
+      font-size:1.5rem ;
+       top: 9.5%;
+       right:12%; 
+      
+    }    
+    
+    .header_icon{
+      display: none;
+    
+     }   
+     
+     .carrito{
+        font-size: 4rem;
+     }
+    
+     .seleccionar {
+        width: 30%;
+        right: 3%; /* Alinea a la izquierda */  
+        transform: translateY(-250%); /* Centra verticalmente la lupa */
+        font-size: 1.5rem;
+       
+    } 
+
+    .overlay{
+        width: 95%;
+    } 
+
+    .imagen__precio, .cantidad, .stock{
+        font-size: 1.5rem;
+    } 
+
+    .imagen__nombre{
+        font-size: 2rem;
+    } 
+
+    .icon__overlay{
+        font-size: 2rem;
+    }
+
 
 }

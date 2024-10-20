@@ -45,7 +45,9 @@ export async function actualizarOverlay() {
        tarjetaID.scrollIntoView({
         behavior:'smooth',
         block:'center'
-       })
+       }) 
+
+       
        agregarProducto();
        eliminarProducto();
     } 

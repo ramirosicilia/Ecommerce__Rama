@@ -58,7 +58,7 @@ seleccion.addEventListener('click', (e) => {
  async function todosLosProducts(){  
     carritoFiltrado.innerHTML=''
 
-    carritoID.forEach((producto,i)=>{  
+    carritoID.forEach((producto)=>{  
         const contenedorDiv = document.createElement('div');
         contenedorDiv.classList.add('tarjeta');
         let color = document.createElement('p');
@@ -75,7 +75,7 @@ seleccion.addEventListener('click', (e) => {
         precio.classList.add('precio');
         
         let botones = crearBotones();
-        botones.dataset.id = i;
+        botones.dataset.id = producto.id;
         contenedorDiv.appendChild(color);
         contenedorDiv.appendChild(precio);
         contenedorDiv.appendChild(botones);
