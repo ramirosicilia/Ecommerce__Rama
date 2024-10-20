@@ -815,9 +815,16 @@ body{
      }   
      
      .carrito{
-        font-size: 4rem;
+        font-size: 4rem; 
+
      }
-    
+      
+     .overlay__tarjeta-1::before {
+       
+        font-size: 2rem;
+      }
+
+
      .seleccionar {
         width: 15%;
         right: 12.5%; /* Alinea a la izquierda */  
@@ -954,7 +961,12 @@ body{
     .header_icon{
         width: 7.5%;
     
-     }   
+     }  
+     
+     .overlay__tarjeta-1::before {
+       
+        font-size: 3rem;
+      }
      
      .carrito{
         font-size: 4rem;
@@ -1126,7 +1138,12 @@ body{
         transform: translateY(-250%); /* Centra verticalmente la lupa */
         font-size: 1.5rem;
        
-    } 
+    }  
+
+    .overlay__tarjeta-1::before {
+       
+        font-size: 3rem;
+      }
 
     .header__input {
         width: 100%; /* El input ocupa todo el ancho del contenedor */
@@ -1300,7 +1317,12 @@ body{
 
     .imagen__precio, .cantidad, .stock{
         font-size: 1.5rem;
-    } 
+    }  
+
+    .overlay__tarjeta-1::before {
+       
+        font-size: 2rem;
+      }
 
     .imagen__nombre{
         font-size: 2rem;
