@@ -12,7 +12,11 @@ const mp = new MercadoPago(MERCADO_PAGO_PUBLIC_KEY, {
 let isButtonInitialized = false;
 
 // Define la función antes de ser utilizada
-const handleClickBtnComprar= async () => { 
+const handleClickBtnComprar= async (e) => {  
+
+    e.stopPropagation()
+
+
     comprar.style.opacity='0'
     try {
         await postProduct(productosActualizados);
