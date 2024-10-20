@@ -11,7 +11,9 @@ export function eliminarProducto() {
   let eliminarBoton = document.querySelectorAll('.eliminar__boton'); // Botones de eliminar en el carrito
 
   eliminarBoton.forEach(botonEliminar => {
-    botonEliminar.addEventListener('click', async () => {
+    botonEliminar.addEventListener('click', async (e) => { 
+
+      e.stopPropagation()
       let idProducto = parseInt(botonEliminar.dataset.id);
       let producto = productosActualizados.find(p => p.id === idProducto); 
     

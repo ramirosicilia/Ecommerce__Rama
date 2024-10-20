@@ -33,10 +33,11 @@ export let productosActualizados = localStorage.getItem('Productos-Actualizados'
 export async function activarBoton() {  
   await obtenerID()
   let botones = document.querySelectorAll('.botones__agregar'); 
-
+   
 
   botones.forEach((button) => {
-    // Eliminar event listeners anteriores
+    // Eliminar event listeners anteriores 
+    
     button.removeEventListener('click', botonesActivados);
     
     // Agregar nuevo event listener
@@ -44,7 +45,11 @@ export async function activarBoton() {
   });
 }
 
-async function botonesActivados(e) {  
+async function botonesActivados(e) {   
+
+  e.stopPropagation()
+
+
   let botonClickeado = Number(e.target.dataset.id);
   let productoSeleccionado = carritoID.find(elemento => elemento.id == botonClickeado); 
   let productoExistente = productosActualizados.find(el => el.id === botonClickeado); 
@@ -56,6 +61,8 @@ async function botonesActivados(e) {
               productoExistente.cantidad++;
               productoSeleccionado.stock--; 
               productoExistente.stock = productoSeleccionado.stock; 
+              
+              
           }
       } else {
           // Si no existe en el carrito, añadirlo y reducir el stock
@@ -81,7 +88,19 @@ async function botonesActivados(e) {
       // Actualizamos el localStorage y la UI
       localStorage.setItem('Productos-Actualizados', JSON.stringify(productosActualizados));
       actualizarValorTotal();
-      actualizarOverlay();
+      actualizarOverlay();  
+      
+      let ultimaTarjeta = productosActualizados[productosActualizados.length - 1];
+      let tarjetaID = document.getElementById(`producto-${ultimaTarjeta.id}`);
+
+      if(tarjetaID) {
+        // Desplázate hacia la última tarjeta
+        tarjetaID.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+
 
       if (productoSeleccionado.stock === 0) { 
           actualizarBoton(productoSeleccionado);

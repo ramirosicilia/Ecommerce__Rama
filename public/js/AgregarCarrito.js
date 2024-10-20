@@ -11,11 +11,12 @@ export function agregarProducto() {
   agregarBoton.forEach(botonAgregar => { 
   
     botonAgregar.addEventListener('click', async (e) => {  
+      e.stopPropagation()
       
       
       let idProducto = Number(botonAgregar.dataset.id); 
-   
-
+      
+      
       let producto = productosActualizados.find(p => p.id === idProducto); 
       console.log(producto.id)
 
@@ -30,7 +31,8 @@ export function agregarProducto() {
        
           actualizarBoton(producto)  
           
-        }   
+        }  
+         
  
         
         else {

@@ -3,7 +3,10 @@ import { productosActualizados } from "./ActivarBotones.js";
 
 vaciar.addEventListener('click', vaciarCarrito);
 
-function vaciarCarrito() { 
+function vaciarCarrito(e) {  
+  
+    e.stopPropagation()
+
   if (productosActualizados.length > 0) {
       // Mostrar el modal de confirmación
       Swal.fire({

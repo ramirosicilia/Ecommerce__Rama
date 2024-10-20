@@ -42,29 +42,49 @@ export async function actualizarOverlay() {
         // Desplazarse a la última tarjeta añadida
        let ultimaTarjeta=productosActualizados[productosActualizados.length-1] 
        let tarjetaID=document.getElementById(`producto-${ultimaTarjeta.id}`) 
-       tarjetaID.scrollIntoView({
-        behavior:'smooth',
-        block:'center'
-       }) 
+
+       window.addEventListener('scroll',async()=>{ 
+        tarjetaID.scrollIntoView({
+            behavior:'smooth',
+            block:'center'
+           }) 
+    
+
+       })
+
+      
+       
 
        
        agregarProducto();
-       eliminarProducto();
+       eliminarProducto(); 
+
+    
+    
     } 
+
      else {
         overlayContainer.innerHTML = 'Carrito vacío ☹️'; 
         containerTotal.style.display = 'none';
     }
 
     overlay.classList.add('active');
-}
+} 
+
 
 
 export function actualizarValorTotal() {
     let total = productosActualizados.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0);
     document.querySelector('.valor__total').textContent = `Valor total: $${total}`; 
     return total;
-}
+} 
+ document.body.addEventListener('click',async(e)=>{ 
+    e.stopPropagation()
+    if(e.target!=overlay){ 
+        overlay.classList.remove('active');
+
+    }
+ })
 
 document.getElementById('icon-overlay').addEventListener('click', () => {
     overlay.classList.remove('active');
