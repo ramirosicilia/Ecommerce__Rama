@@ -30,10 +30,10 @@ function vaciarCarrito(e) {
         
               localStorage.setItem('Productos-Actualizados', JSON.stringify(productosActualizados));
               
-              // Mostrar el mensaje de "Carrito vacío" después de vaciar el carrito
-              overlayContainer.innerHTML = 'Carrito vacío ☹️';
+              // Mostrar el mensaje de "Carrito vacío" después de vaciar el carrito 
+              overlayContainer.style.marginTop='60px'
+              overlayContainer.innerHTML = 'Carrito vacío ☹️'; 
               overlay.style.minHeight='40%' 
-            
               containerTotal.style.display = 'none'; 
               icon.style.display = 'none'; 
 
@@ -43,7 +43,9 @@ function vaciarCarrito(e) {
               }, 1000);
           }
       });
-  } else {
+  }
+  
+  else {
     Swal.fire({
         title: 'Carrito vacío',
         text: 'No hay productos para comprar.',

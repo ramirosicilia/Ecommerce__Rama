@@ -43,10 +43,10 @@ export function eliminarProducto() {
         }
 
         // Actualizar el ícono del carrito
-        let totalCantidad = productosActualizados.reduce((total, p) => total + p.cantidad, 0);
-        iconCart.innerHTML = totalCantidad;
+       
+        iconCart.innerHTML = productosActualizados.reduce((total, p) => total + p.cantidad, 0);
         
-        if (totalCantidad === 0) {
+        if (iconCart.innerHTML === 0) {
           iconCart.innerHTML = '0';  // O cualquier otro valor para el ícono vacío
         }
 

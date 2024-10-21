@@ -42,8 +42,11 @@ export async function actualizarOverlay() {
 
     } 
 
-     else {
-        overlayContainer.innerHTML = 'Carrito vacío ☹️'; 
+     else { 
+        let parrafoVacio=document.createElement('p') 
+        parrafoVacio.textContent='Carrito vacío☹️'
+        parrafoVacio.style.marginTop='60px' ; 
+        overlayContainer.append(parrafoVacio)
         containerTotal.style.display = 'none';
     }
 
