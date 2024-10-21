@@ -1,5 +1,6 @@
-import { vaciar, overlayContainer, containerTotal } from "./ActualizarOverlay.js"; 
-import { productosActualizados } from "./ActivarBotones.js";
+import { vaciar, overlayContainer, containerTotal,overlay } from "./ActualizarOverlay.js"; 
+import { productosActualizados } from "./ActivarBotones.js"; 
+let icon=document.getElementById("icon-overlay")
 
 vaciar.addEventListener('click', vaciarCarrito);
 
@@ -31,12 +32,15 @@ function vaciarCarrito(e) {
               
               // Mostrar el mensaje de "Carrito vacío" después de vaciar el carrito
               overlayContainer.innerHTML = 'Carrito vacío ☹️';
-              containerTotal.style.display = 'none';
+              overlay.style.minHeight='40%' 
+            
+              containerTotal.style.display = 'none'; 
+              icon.style.display = 'none'; 
 
               // Reiniciar la pantalla después de 2 segundos
               setTimeout(() => {
                   window.location.reload();
-              }, 800);
+              }, 1000);
           }
       });
   } else {
@@ -54,7 +58,7 @@ function vaciarCarrito(e) {
 const style = document.createElement('style');
 style.innerHTML = `
   .swal2-container {
-      z-index: 10000; /* Asegúrate de que este valor sea mayor que el z-index del overlay */
+      z-index: 100000000000000000; /* Asegúrate de que este valor sea mayor que el z-index del overlay */
       position: absolute; /* Asegúrate de que el modal esté en una capa superior */
   }
   .swal2-popup {

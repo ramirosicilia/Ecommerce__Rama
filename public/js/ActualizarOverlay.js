@@ -37,30 +37,9 @@ export async function actualizarOverlay() {
         localStorage.setItem("Productos-Actualizados", JSON.stringify(productosActualizados));
        
 
-        // Reproducir música cuando se abre el overlay solo si no se está reproduciendo ya
-       
-        // Desplazarse a la última tarjeta añadida
-       let ultimaTarjeta=productosActualizados[productosActualizados.length-1] 
-       let tarjetaID=document.getElementById(`producto-${ultimaTarjeta.id}`) 
-
-       window.addEventListener('scroll',async()=>{ 
-        tarjetaID.scrollIntoView({
-            behavior:'smooth',
-            block:'center'
-           }) 
-    
-
-       })
-
-      
-       
-
-       
        agregarProducto();
        eliminarProducto(); 
 
-    
-    
     } 
 
      else {
@@ -78,13 +57,18 @@ export function actualizarValorTotal() {
     document.querySelector('.valor__total').textContent = `Valor total: $${total}`; 
     return total;
 } 
- document.body.addEventListener('click',async(e)=>{ 
-    e.stopPropagation()
-    if(e.target!=overlay){ 
-        overlay.classList.remove('active');
+document.body.addEventListener('click', (e) => { 
+    e.stopPropagation();
+    
+    // Verificar si el modal de Swal está abierto
+    const modalAbierto = document.querySelector('.swal2-container');
 
+    if (!modalAbierto && e.target !== overlay) { 
+        // Solo cierra el overlay si el modal de Swal no está abierto y si se hace clic fuera del overlay
+        overlay.classList.remove('active');
     }
- })
+});
+
 
 document.getElementById('icon-overlay').addEventListener('click', () => {
     overlay.classList.remove('active');

@@ -1,6 +1,6 @@
 
 
-import { iconCart, actualizarOverlay, actualizarValorTotal } from "./ActualizarOverlay.js"; 
+import { iconCart, actualizarOverlay, actualizarValorTotal, overlay } from "./ActualizarOverlay.js"; 
 import { productosActualizados } from "./ActivarBotones.js";
 import { botonReactivado } from './ReactivarBoton.js'; 
 import { BACKEND } from "./Variables.js";
@@ -8,37 +8,31 @@ import { BACKEND } from "./Variables.js";
 
 
 export function eliminarProducto() {
-  let eliminarBoton = document.querySelectorAll('.eliminar__boton'); // Botones de eliminar en el carrito
+  let eliminarBoton = document.querySelectorAll('.eliminar__boton'); 
 
   eliminarBoton.forEach(botonEliminar => {
     botonEliminar.addEventListener('click', async (e) => { 
+      e.stopPropagation();
 
-      e.stopPropagation()
       let idProducto = parseInt(botonEliminar.dataset.id);
       let producto = productosActualizados.find(p => p.id === idProducto); 
     
-
       if (producto) {
-        // Disminuir cantidad si es mayor a 1 o eliminar producto si es 1
+        // Disminuir cantidad o eliminar producto
         if (producto.cantidad > 1) {
           producto.cantidad--;
-          producto.stock++;
+          producto.stock++;  
         } else {
-          // Eliminar producto del carrito si la cantidad es 1
           productosActualizados.splice(productosActualizados.findIndex(p => p.id === idProducto), 1); 
-          botonReactivado(idProducto)
-
-          // Reactivar el botón de este producto específico en la interfaz
-           
+          botonReactivado(idProducto); 
+          overlay.style.minHeight = '40%';
         }
 
-        // Actualizar el servidor con el stock actualizado o eliminar el producto
+        // Actualizar en el backend
         try {
           await fetch(`${BACKEND}/carrito/productos/${idProducto}`, {
             method: producto.stock > 0 ? "PUT" : "DELETE",
-            headers: {
-              "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               cantidad: producto.cantidad,
               stock: producto.stock
@@ -48,15 +42,20 @@ export function eliminarProducto() {
           console.log("Error al recibir la respuesta del backend:", err.message);
         }
 
-        // Guardar los productos actualizados en localStorage
+        // Actualizar el ícono del carrito
+        let totalCantidad = productosActualizados.reduce((total, p) => total + p.cantidad, 0);
+        iconCart.innerHTML = totalCantidad;
+        
+        if (totalCantidad === 0) {
+          iconCart.innerHTML = '0';  // O cualquier otro valor para el ícono vacío
+        }
+
+        // Guardar en localStorage
         localStorage.setItem('Productos-Actualizados', JSON.stringify(productosActualizados));
         
-        // Actualizar la interfaz del carrito
+        // Actualizar la interfaz
         actualizarOverlay();
         actualizarValorTotal();
-
-        // Si el carrito está vacío, se puede manejar la reactivación general de botones
-       
       }
     });
   });

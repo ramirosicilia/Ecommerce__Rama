@@ -27,11 +27,13 @@ export function agregarProducto() {
         console.log(producto.stock)
       
 
-        if (producto.stock === 0) {   
+        if (producto.stock === 0 ) {   
        
           actualizarBoton(producto)  
           
         }  
+
+        
          
  
         

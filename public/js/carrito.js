@@ -5,10 +5,10 @@ import { activarBoton } from './ActivarBotones.js';
 import { BACKEND } from "./Variables.js";
 
 
-let carrito = document.getElementById('carrito__compras');
+let carrito=document.getElementById('carrito__compras');
 
 export let datos
-
+ 
 function crearBotones() {
     let boton = document.createElement('button');
     boton.innerHTML = 'Agregar';
@@ -16,7 +16,7 @@ function crearBotones() {
     return boton;
 }
 
- async function crearCarrito() {
+   async function crearCarrito() {
 
    try{ 
     
@@ -73,9 +73,7 @@ function crearBotones() {
 }
 
 
+await crearCarrito();
 
 
-document.addEventListener("DOMContentLoaded", async () => {
-    await crearCarrito();
-}); 
 

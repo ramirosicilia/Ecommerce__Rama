@@ -25,7 +25,9 @@ const handleClickBtnComprar= async (e) => {
     }
 }; 
 
-const postProduct = async (productos) => {
+const postProduct = async (productos) => { 
+
+
     try {
         // Convertir los productos a un formato adecuado para Mercado Pago
         const items = productos.map(producto => ({

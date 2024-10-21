@@ -10,7 +10,8 @@ export function actualizarBoton(producto) {
         // Actualizar contenido y estilo de los botones
         boton.innerHTML = 'Sin stock';
         boton.style.opacity = '.6';
-        boton.style.backgroundColor=' #ca4949 '
+        boton.style.backgroundColor=' #ca4949 ' 
+      
   
         // Deshabilitar ambos botones
         boton.disabled = true;

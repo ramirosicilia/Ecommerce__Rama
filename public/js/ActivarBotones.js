@@ -61,15 +61,16 @@ async function botonesActivados(e) {
               productoExistente.cantidad++;
               productoSeleccionado.stock--; 
               productoExistente.stock = productoSeleccionado.stock; 
-              
+         
               
           }
       } else {
           // Si no existe en el carrito, añadirlo y reducir el stock
           productosActualizados.push({ ...productoSeleccionado, cantidad: 1 });
           productoSeleccionado.stock--; 
+         
       }
-
+   
       // Actualizamos el stock en el backend
       try {
           let response = await fetch(`${BACKEND}/carrito/productos/${productoSeleccionado.id}`, {
@@ -85,7 +86,8 @@ async function botonesActivados(e) {
           console.error("Error al actualizar el producto en el backend", err.message);
       }
 
-      // Actualizamos el localStorage y la UI
+      // Actualizamos el localStorage y la UI 
+      iconCart.innerHTML = productosActualizados.reduce((acc, prod) => acc + prod.cantidad, 0);
       localStorage.setItem('Productos-Actualizados', JSON.stringify(productosActualizados));
       actualizarValorTotal();
       actualizarOverlay();  
@@ -104,7 +106,8 @@ async function botonesActivados(e) {
 
       if (productoSeleccionado.stock === 0) { 
           actualizarBoton(productoSeleccionado);
-      }
+      } 
+     
   }
 }
 window.addEventListener('load', () => {
