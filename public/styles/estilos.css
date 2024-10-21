@@ -52,13 +52,14 @@ body{
     font-size: 6rem;
     color: #ffff; 
     border: 1 px solid hsl(240, 92%, 60%);
-    position: relative;
+  
 } 
 .contenedor-carrito{
     background-color: #b3a7a7;
     padding: 2rem;
     border-radius: 50%;
     box-shadow: 2px 4px 4px #1a1919 ; 
+    position: relative;
 
 }  
 
@@ -81,6 +82,7 @@ body{
  
  .header_icon{
     width: 3%;
+   min-width: 3%;
 
  } 
 
@@ -88,8 +90,10 @@ body{
 
 .numero{ 
     position: absolute; 
-    top: 12%;
-    right:8%; 
+    top: 50px;
+   left: 45px;
+    transform: translateX(-45%);
+    transform: translateY(-50%); 
     font-size: 3rem;
     border-radius: 50%;
     font-weight: bolder;
@@ -550,11 +554,7 @@ body{
 
 @media (min-width: 992px) and (max-width: 1199px) {  
 
-    .numero{
-      top: 14%;
-      right:9%; 
 
-}    
 
 .header_icon{
     width: 4%;
@@ -661,7 +661,15 @@ body{
 } 
 
  
-@media (min-width: 768px) and (max-width: 991px) {      
+@media (min-width: 768px) and (max-width: 991px) {    
+    
+    .numero{ 
+        top: 40px;
+       left: 40px;
+        transform: translateX(-40%);
+        transform: translateY(-40%); 
+     
+    } 
 
 
 .contenedor-carrito{
@@ -672,12 +680,7 @@ body{
 
 }   
 
-.numero{ 
-        
-   top: 12.5%;
-   right:8.5%; 
   
-}    
 
 .header_icon{
     width: 4%;
@@ -789,6 +792,15 @@ body{
 
 @media (min-width: 576px) and (max-width: 767px) {  
 
+    .numero{ 
+        top: 30px;
+       left: 30px;
+        transform: translateX(-30%);
+        transform: translateY(-30%); 
+        font-size: 2rem;
+     
+    } 
+
     .contenedor-carrito{
         background-color: #b3a7a7;
         padding: 1.5rem;
@@ -797,12 +809,7 @@ body{
     
     }   
     
-    .numero{ 
-      font-size:2rem ;
-       top: 11.5%;
-       right:9%; 
       
-    }    
     
     .header_icon{
         width: 5%;
@@ -947,11 +954,14 @@ body{
     }   
     
     .numero{ 
-      font-size:1.8rem ;
-       top: 11.5%;
-       right:12%; 
-      
-    }    
+        top: 30px;
+       left: 30px;
+        transform: translateX(-30%);
+        transform: translateY(-30%); 
+        font-size: 2rem;
+     
+    } 
+
     
     .header_icon{
         width: 7.5%;
@@ -1113,8 +1123,7 @@ body{
     
     .numero{ 
       font-size:1.5rem ;
-       top: 11.5%;
-       right:12%; 
+     
       
     }    
     
@@ -1283,11 +1292,13 @@ body{
     }   
     
     .numero{ 
-      font-size:1.5rem ;
-       top: 9.5%;
-       right:12%; 
-      
-    }    
+        top: 20px;
+       left: 20px;
+        transform: translateX(-20%);
+        transform: translateY(-20%); 
+        font-size: 1.5rem;
+     
+    } 
     
     .header_icon{
       display: none;
