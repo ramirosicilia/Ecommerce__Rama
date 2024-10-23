@@ -41,7 +41,7 @@ const postProduct = async (productos) => {
         
            // Añadir la propiedad de imagen
         ;
-
+ 
         
 
         // Enviar los productos al servidor para crear la preferencia
